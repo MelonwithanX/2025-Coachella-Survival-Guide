@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coachella 2025: Your Desert Oasis Guide</title>
+    <style>
+        :root {
+            --primary: #FF6B6B;
+            --secondary: #4ECDC4;
+            --accent: #FFD166;
+            --dark: #1A1A1D;
+            --light: #F7F7F7;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--light);
+            color: var(--dark);
+            overflow-x: hidden;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #FF6B6B, #4ECDC4, #FFD166);
+            background-size: 400% 400%;
+            animation: gradient 15s ease infinite;
+        }
+        
+        @keyframes gradient {
+            0% {background-position: 0% 50%;}
+            50% {background-position: 100% 50%;}
+            100% {background-position: 0% 50%;}
+        }
+        
+        header {
+            padding: 2rem;
+            text-align: center;
+            color: white;
+        }
+        
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        h2 {
+            font-size: 1.8rem;
+            margin-top: 0;
+            font-weight: 400;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+        }
+        
+        .card-header {
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-align: center;
+            padding: 1rem;
+        }
+        
+        .card-content {
+            padding: 1.5rem;
+        }
+        
+        .card-content p {
+            margin-bottom: 1.5rem;
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            background-color: var(--primary);
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: bold;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+        
+        .btn:hover {
+            background-color: var(--dark);
+            transform: scale(1.05);
+        }
+        
+        .tickets-bg { background-color: #FF6B6B; }
+        .lineup-bg { background-color: #4ECDC4; }
+        .marketplace-bg { background-color: #FFD166; }
+        .playlist-bg { background-color: #6B5B95; }
+        .livestream-bg { background-color: #88D8B0; }
+        .music-bg { background-color: #FF85A2; }
+        
+        footer {
+            background-color: var(--dark);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .countdown {
+            background-color: var(--dark);
+            color: white;
+            padding: 1rem;
+            text-align: center;
+            font-size: 1.2rem;
+        }
+        
+        .countdown span {
+            font-weight: bold;
+            color: var(--accent);
+        }
+        
+        .desert-decoration {
+            position: absolute;
+            z-index: -1;
+            opacity: 0.1;
+        }
+        
+        .palm1 {
+            top: 50%;
+            left: 5%;
+            transform: rotate(15deg);
+            font-size: 100px;
+        }
+        
+        .palm2 {
+            top: 30%;
+            right: 5%;
+            transform: rotate(-15deg);
+            font-size: 120px;
+        }
+        
+        .cactus {
+            bottom: 10%;
+            left: 15%;
+            font-size: 80px;
+        }
+        
+        .ferris {
+            bottom: 20%;
+            right: 10%;
+            font-size: 90px;
+        }
+        
+        .music-player {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            padding: 1.5rem;
+            margin-top: 2rem;
+            text-align: center;
+        }
+        
+        .music-player h3 {
+            margin-top: 0;
+            color: var(--dark);
+        }
+        
+        .audio-controls {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .play-btn {
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+        
+        .play-btn:hover {
+            background-color: var(--dark);
+            transform: scale(1.05);
+        }
+        
+        .song-info {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .song-info img {
+            width: 80px;
+            height: 80px;
+            border-radius: 10px;
+            object-fit: cover;
+        }
+        
+        .credits {
+            margin-top: 1.5rem;
+            font-style: italic;
+            color: var(--dark);
+            opacity: 0.8;
+        }
+        
+        .progress-container {
+            width: 100%;
+            height: 8px;
+            background: #e0e0e0;
+            border-radius: 5px;
+            margin-top: 1rem;
+            cursor: pointer;
+        }
+        
+        .progress {
+            height: 100%;
+            background-color: var(--primary);
+            border-radius: 5px;
+            width: 0%;
+            transition: width 0.1s linear;
+        }
+        
+        .time {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 0.5rem;
+            font-size: 0.8rem;
+            color: var(--dark);
+        }
+        
+        @media (max-width: 768px) {
+            h1 { font-size: 2.5rem; }
+            .card-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <div class="desert-decoration palm1">🌴</div>
+    <div class="desert-decoration palm2">🌴</div>
+    <div class="desert-decoration cactus">🌵</div>
+    <div class="desert-decoration ferris">🎡</div>
+    
+    <header class="gradient-bg">
+        <h1>COACHELLA 2025</h1>
+        <h2>Your Desert Oasis Survival Guide</h2>
+    </header>
+    
+    <div class="countdown">
+        COUNTDOWN TO WEEKEND 1: <span id="countdown">Loading...</span>
+    </div>
+    
+    <div class="container">
+        <div class="music-player">
+            <h3>GET IN THE FESTIVAL MOOD</h3>
+            <div class="song-info">
+                <img src="/api/placeholder/80/80" alt="Album Cover">
+                <div>
+                    <h4>Danny Shields - OH MY</h4>
+                    <p>Festival Anthem 2025</p>
+                </div>
+            </div>
+            <div class="audio-controls">
+                <button id="playBtn" class="play-btn">▶</button>
+            </div>
+            <div class="progress-container" id="progress-container">
+                <div class="progress" id="progress"></div>
+            </div>
+            <div class="time">
+                <span id="current-time">0:00</span>
+                <span id="duration">0:00</span>
+            </div>
+            <audio id="audio" src=""></audio>
+        </div>
+        
+        <div class="card-grid">
+            <div class="card">
+                <div class="card-header tickets-bg">
+                    🎟️ SECURE YOUR SPOT
+                </div>
+                <div class="card-content">
+                    <p>Don't miss out on the hottest festival of 2025! Whether you're a Coachella veteran or first-timer, grab your tickets before they're gone. Get ready for two unforgettable weekends in the desert!</p>
+                    <a href="https://www.coachella.com/lineup" class="btn">Official Tickets</a>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-header lineup-bg">
+                    🎤 2025 DREAM LINEUP
+                </div>
+                <div class="card-content">
+                    <p>From headliners that will blow your mind to underground artists about to explode, the 2025 lineup is our most ambitious yet. Discover who's performing and plan your perfect festival experience.</p>
+                    <a href="https://www.coachella.com/lineup" class="btn">See The Lineup</a>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-header marketplace-bg">
+                    💸 TICKET MARKETPLACE
+                </div>
+                <div class="card-content">
+                    <p>Missed the official sale? Looking to sell your ticket? Join our community marketplace where Coachella fans help each other out. Find tickets, camping passes, and connect with fellow festival-goers.</p>
+                    <a href="https://www.facebook.com/groups/1851397622007989" class="btn">Join The Exchange</a>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-header playlist-bg">
+                    🎧 PREP YOUR EARS
+                </div>
+                <div class="card-content">
+                    <p>Get into the Coachella mood with our curated playlist featuring all the artists performing this year. Perfect for road trips, workout sessions, or just getting hyped for the big weekend.</p>
+                    <a href="https://open.spotify.com/playlist/4BSj7IwrHLRpZeVNodMh5Z?si=5d27a87e88f94ed9" class="btn">Spotify Playlist</a>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-header livestream-bg">
+                    📱 COACHELLA ANYWHERE
+                </div>
+                <div class="card-content">
+                    <p>Can't make it to the desert? No problem! Experience the magic from anywhere with our high-quality livestreams. Don't miss a beat of the performances, art installations, and festival vibes.</p>
+                    <a href="https://www.youtube.com/coachella" class="btn">YouTube Channel</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <p>COACHELLA VALLEY MUSIC AND ARTS FESTIVAL 2025</p>
+        <p>Indio, California • April 2025</p>
+        <p class="credits">Website designed by Zimeng Xue</p>
+    </footer>
+
+    <script>
+        // Countdown timer to Coachella 2025 (assuming April 11, 2025 for Weekend 1)
+        const countdownDate = new Date("April 11, 2025 12:00:00").getTime();
+        
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const distance = countdownDate - now;
+            
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            
+            document.getElementById("countdown").innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+            
+            if (distance < 0) {
+                document.getElementById("countdown").innerHTML = "IT'S HAPPENING NOW!";
+            }
+        }
+        
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+        
+        // Audio Player Functionality
+        const audio = document.getElementById('audio');
+        const playBtn = document.getElementById('playBtn');
+        const progressContainer = document.getElementById('progress-container');
+        const progress = document.getElementById('progress');
+        const currentTimeEl = document.getElementById('current-time');
+        const durationEl = document.getElementById('duration');
+        
+        // Note: In a real implementation, this would be the actual audio file
+        // For this demo, we're using a placeholder
+        audio.src = "";
+        
+        // Play/pause functionality
+        function togglePlay() {
+            if (audio.paused) {
+                playBtn.textContent = '⏸️';
+                // In a real implementation, this would play the audio
+                // For this demo, we'll simulate playback
+                simulatePlayback();
+            } else {
+                playBtn.textContent = '▶';
+                // In a real implementation, this would pause the audio
+                // For this demo, we'll stop our simulation
+                clearInterval(playbackSimulation);
+            }
+            
+            // Toggle the audio state
+            // In a real implementation with actual audio file
+            // if (audio.paused) {
+            //     audio.play();
+            // } else {
+            //     audio.pause();
+            // }
+        }
+        
+        playBtn.addEventListener
