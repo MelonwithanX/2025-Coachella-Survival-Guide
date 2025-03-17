@@ -426,6 +426,41 @@
             }
         }
         
+        /* Video modal styles */
+        .video-container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+        }
+        
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            height: 0;
+            overflow: hidden;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+        }
+        
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+            border-radius: 20px;
+        }
+        
+        .video-title {
+            text-align: center;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 2rem;
+            margin: 2rem 0;
+            color: var(--dark);
+        }
+        
         @media (max-width: 768px) {
             h1 { font-size: 3rem; }
             h2 { font-size: 1.5rem; }
@@ -439,7 +474,6 @@
     <div class="desert-decoration palm2">🌴</div>
     <div class="desert-decoration cactus">🌵</div>
     <div class="desert-decoration ferris">🎡</div>
-    
     <header class="gradient-bg">
         <ul class="circles">
             <li></li>
@@ -456,6 +490,14 @@
         COUNTDOWN TO WEEKEND 1: <span id="countdown">Loading...</span>
     </div>
     
+    <!-- Added Video Section -->
+    <div class="video-container">
+        <h3 class="video-title">Experience Coachella Magic</h3>
+        <div class="video-wrapper">
+            <iframe width="1120" height="630" src="https://www.youtube.com/embed/vX5XR7uwkZk" title="Coachella Experience" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+    </div>
+    
     <div class="container">
         <!-- Music player with just play/pause -->
         <div class="music-player floating">
@@ -465,16 +507,12 @@
         
         <div class="card-grid">
             <div class="card">
-                <div class="card-header
-                    Here's the rest of the HTML code, continuing from where it stopped, with the appropriate attribution to Zimeng Xue:
-
-```html
                 <div class="card-header tickets-bg">
                     Tickets & Passes
                 </div>
                 <div class="card-content">
                     <p>Secure your spot in the desert! General admission, VIP packages, and camping options available. Payment plans make your festival dreams possible with easy installments.</p>
-                    <a href="#" class="btn">Buy Now</a>
+                    <a href="https://coachella.com/" target="_blank" class="btn">Buy Now</a>
                 </div>
             </div>
             
@@ -484,7 +522,7 @@
                 </div>
                 <div class="card-content">
                     <p>Discover the incredible artists performing across multiple stages. From headliners to rising stars, Coachella 2025 brings together the most innovative sounds in music today.</p>
-                    <a href="#" class="btn">See Full Lineup</a>
+                    <a href="https://www.coachella.com/lineup" target="_blank" class="btn">See Full Lineup</a>
                 </div>
             </div>
             
@@ -494,7 +532,7 @@
                 </div>
                 <div class="card-content">
                     <p>Shop exclusive Coachella merch, fashion, accessories, and art from our curated vendors. Find the perfect festival fits and mementos to remember your desert adventure.</p>
-                    <a href="#" class="btn">Explore Shop</a>
+                    <a href="https://www.facebook.com/groups/1851397622007989" target="_blank" class="btn">Explore Shop</a>
                 </div>
             </div>
             
@@ -504,7 +542,7 @@
                 </div>
                 <div class="card-content">
                     <p>Get into the Coachella spirit with our official playlists. Discover new music, prepare your festival schedule, and immerse yourself in the sounds of Coachella 2025.</p>
-                    <a href="#" class="btn">Listen Now</a>
+                    <a href="https://open.spotify.com/playlist/4BSj7IwrHLRpZeVNodMh5Z?si=fac02529ab2b4e2a" target="_blank" class="btn">Listen Now</a>
                 </div>
             </div>
             
@@ -514,7 +552,7 @@
                 </div>
                 <div class="card-content">
                     <p>Can't make it to the desert? Experience the magic from home with our HD livestreams of select performances, exclusive interviews, and behind-the-scenes content.</p>
-                    <a href="#" class="btn">Watch Live</a>
+                    <a href="https://www.youtube.com/coachella" target="_blank" class="btn">Watch Live</a>
                 </div>
             </div>
         </div>
@@ -570,4 +608,3 @@
     </script>
 </body>
 </html>
-```
