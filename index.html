@@ -4,7 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Coachella 2025: Your Desert Oasis Guide</title>
+    <!-- Import Google Fonts -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700;900&family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600;700&display=swap');
+        
         :root {
             --primary: #FF6B6B;
             --secondary: #4ECDC4;
@@ -13,13 +17,20 @@
             --light: #F7F7F7;
         }
         
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Poppins', sans-serif;
             margin: 0;
             padding: 0;
             background-color: var(--light);
             color: var(--dark);
             overflow-x: hidden;
+            line-height: 1.6;
         }
         
         .gradient-bg {
@@ -35,21 +46,30 @@
         }
         
         header {
-            padding: 2rem;
+            padding: 4rem 2rem;
             text-align: center;
             color: white;
+            position: relative;
+            overflow: hidden;
         }
         
         h1 {
-            font-size: 3.5rem;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 900;
+            font-size: 4.5rem;
             margin-bottom: 0.5rem;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.3);
+            letter-spacing: 2px;
+            text-transform: uppercase;
         }
         
         h2 {
-            font-size: 1.8rem;
-            margin-top: 0;
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            margin-top: 0.5rem;
             font-weight: 400;
+            font-style: italic;
+            letter-spacing: 1px;
         }
         
         .container {
@@ -67,207 +87,350 @@
         
         .card {
             background: white;
-            border-radius: 15px;
+            border-radius: 20px;
             overflow: hidden;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            z-index: 1;
         }
         
         .card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+            transform: translateY(-15px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+        }
+        
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0));
+            z-index: -1;
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            border: 1px solid rgba(255,255,255,0.18);
         }
         
         .card-header {
-            height: 200px;
+            height: 220px;
             display: flex;
             align-items: center;
             justify-content: center;
             color: white;
-            font-size: 1.5rem;
+            font-size: 1.8rem;
             font-weight: bold;
             text-align: center;
             padding: 1rem;
+            font-family: 'Montserrat', sans-serif;
+            position: relative;
+            overflow: hidden;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .card-header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 30%;
+            background: linear-gradient(to top, rgba(0,0,0,0.4), transparent);
         }
         
         .card-content {
-            padding: 1.5rem;
+            padding: 2rem;
         }
         
         .card-content p {
-            margin-bottom: 1.5rem;
-            font-size: 1rem;
-            line-height: 1.6;
+            margin-bottom: 1.8rem;
+            font-size: 1.05rem;
+            line-height: 1.7;
+            color: #444;
         }
         
         .btn {
             display: inline-block;
-            padding: 0.8rem 1.5rem;
+            padding: 0.9rem 2rem;
             background-color: var(--primary);
             color: white;
             text-decoration: none;
-            border-radius: 30px;
-            font-weight: bold;
-            transition: background-color 0.3s ease, transform 0.2s ease;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            font-family: 'Montserrat', sans-serif;
+            letter-spacing: 1px;
+            box-shadow: 0 5px 15px rgba(255,107,107,0.4);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 100%;
+            background-color: var(--dark);
+            transition: all 0.3s ease;
+            z-index: -1;
+            border-radius: 50px;
         }
         
         .btn:hover {
-            background-color: var(--dark);
-            transform: scale(1.05);
+            box-shadow: 0 7px 20px rgba(26,26,29,0.4);
+            transform: translateY(-3px);
         }
         
-        .tickets-bg { background-color: #FF6B6B; }
-        .lineup-bg { background-color: #4ECDC4; }
-        .marketplace-bg { background-color: #FFD166; }
-        .playlist-bg { background-color: #6B5B95; }
-        .livestream-bg { background-color: #88D8B0; }
-        .music-bg { background-color: #FF85A2; }
+        .btn:hover::before {
+            width: 100%;
+        }
+        
+        .tickets-bg { 
+            background: linear-gradient(135deg, #FF6B6B, #FF4365);
+        }
+        
+        .lineup-bg { 
+            background: linear-gradient(135deg, #4ECDC4, #1A936F);
+        }
+        
+        .marketplace-bg { 
+            background: linear-gradient(135deg, #FFD166, #F7B733);
+        }
+        
+        .playlist-bg { 
+            background: linear-gradient(135deg, #6B5B95, #9B5DE5);
+        }
+        
+        .livestream-bg { 
+            background: linear-gradient(135deg, #88D8B0, #48BF84);
+        }
         
         footer {
-            background-color: var(--dark);
+            background: linear-gradient(to right, #1a1a2e, #16213e, #0f3460);
             color: white;
             text-align: center;
-            padding: 2rem;
-            margin-top: 3rem;
+            padding: 3rem 2rem;
+            margin-top: 4rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        footer p {
+            margin: 0.7rem 0;
+            font-size: 1.1rem;
         }
         
         .countdown {
-            background-color: var(--dark);
+            background: linear-gradient(to right, rgba(26,26,29,0.95), rgba(26,26,29,0.9));
             color: white;
-            padding: 1rem;
+            padding: 1.2rem;
             text-align: center;
-            font-size: 1.2rem;
+            font-size: 1.3rem;
+            font-family: 'Montserrat', sans-serif;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            backdrop-filter: blur(5px);
+            border-bottom: 1px solid rgba(255,255,255,0.1);
         }
         
         .countdown span {
             font-weight: bold;
             color: var(--accent);
+            letter-spacing: 1px;
         }
         
         .desert-decoration {
             position: absolute;
             z-index: -1;
-            opacity: 0.1;
+            opacity: 0.07;
+            filter: blur(1px);
         }
         
         .palm1 {
-            top: 50%;
+            top: 40%;
             left: 5%;
             transform: rotate(15deg);
-            font-size: 100px;
+            font-size: 120px;
         }
         
         .palm2 {
-            top: 30%;
+            top: 25%;
             right: 5%;
             transform: rotate(-15deg);
-            font-size: 120px;
+            font-size: 140px;
         }
         
         .cactus {
             bottom: 10%;
             left: 15%;
-            font-size: 80px;
+            font-size: 100px;
         }
         
         .ferris {
             bottom: 20%;
             right: 10%;
-            font-size: 90px;
+            font-size: 110px;
         }
         
         .music-player {
-            background: white;
-            border-radius: 15px;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-            padding: 1.5rem;
-            margin-top: 2rem;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 20px;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+            padding: 2rem;
+            margin: 3rem auto;
             text-align: center;
-        }
-        
-        .music-player h3 {
-            margin-top: 0;
-            color: var(--dark);
-        }
-        
-        .audio-controls {
             display: flex;
-            align-items: center;
             justify-content: center;
-            gap: 1rem;
-            margin-top: 1rem;
+            align-items: center;
+            max-width: 300px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.18);
         }
         
         .play-btn {
-            background-color: var(--primary);
+            background: linear-gradient(135deg, var(--primary), #FF4365);
             color: white;
             border: none;
             border-radius: 50%;
-            width: 60px;
-            height: 60px;
-            font-size: 1.5rem;
+            width: 80px;
+            height: 80px;
+            font-size: 2rem;
             display: flex;
             align-items: center;
             justify-content: center;
             cursor: pointer;
-            transition: background-color 0.3s ease, transform 0.2s ease;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 20px rgba(255,107,107,0.3);
         }
         
         .play-btn:hover {
-            background-color: var(--dark);
-            transform: scale(1.05);
+            transform: scale(1.1);
+            box-shadow: 0 15px 30px rgba(255,107,107,0.5);
         }
         
-        .song-info {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 1rem;
-            margin-top: 1rem;
+        .play-btn:active {
+            transform: scale(0.95);
         }
         
-        .song-info img {
+        .creator {
+            font-weight: bold;
+            color: var(--accent);
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 1.2rem;
+            letter-spacing: 1px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .creator::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: var(--accent);
+        }
+        
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+        
+        @keyframes floating {
+            0% { transform: translate(0, 0px); }
+            50% { transform: translate(0, 15px); }
+            100% { transform: translate(0, 0px); }
+        }
+        
+        /* Animated Background Elements */
+        .bg-element {
+            position: absolute;
+            opacity: 0.05;
+            z-index: -1;
+        }
+        
+        .circles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -1;
+        }
+        
+        .circles li {
+            position: absolute;
+            display: block;
+            list-style: none;
+            width: 20px;
+            height: 20px;
+            background: rgba(255, 255, 255, 0.2);
+            animation: animate 25s linear infinite;
+            bottom: -150px;
+            border-radius: 50%;
+        }
+        
+        .circles li:nth-child(1) {
+            left: 25%;
             width: 80px;
             height: 80px;
-            border-radius: 10px;
-            object-fit: cover;
+            animation-delay: 0s;
         }
         
-        .credits {
-            margin-top: 1.5rem;
-            font-style: italic;
-            color: var(--dark);
-            opacity: 0.8;
+        .circles li:nth-child(2) {
+            left: 10%;
+            width: 20px;
+            height: 20px;
+            animation-delay: 2s;
+            animation-duration: 12s;
         }
         
-        .progress-container {
-            width: 100%;
-            height: 8px;
-            background: #e0e0e0;
-            border-radius: 5px;
-            margin-top: 1rem;
-            cursor: pointer;
+        .circles li:nth-child(3) {
+            left: 70%;
+            width: 30px;
+            height: 30px;
+            animation-delay: 4s;
         }
         
-        .progress {
-            height: 100%;
-            background-color: var(--primary);
-            border-radius: 5px;
-            width: 0%;
-            transition: width 0.1s linear;
+        .circles li:nth-child(4) {
+            left: 40%;
+            width: 60px;
+            height: 60px;
+            animation-delay: 0s;
+            animation-duration: 18s;
         }
         
-        .time {
-            display: flex;
-            justify-content: space-between;
-            margin-top: 0.5rem;
-            font-size: 0.8rem;
-            color: var(--dark);
+        .circles li:nth-child(5) {
+            left: 65%;
+            width: 20px;
+            height: 20px;
+            animation-delay: 0s;
+        }
+        
+        @keyframes animate {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 1;
+                border-radius: 0;
+            }
+            100% {
+                transform: translateY(-1000px) rotate(720deg);
+                opacity: 0;
+                border-radius: 50%;
+            }
         }
         
         @media (max-width: 768px) {
-            h1 { font-size: 2.5rem; }
+            h1 { font-size: 3rem; }
+            h2 { font-size: 1.5rem; }
             .card-grid { grid-template-columns: 1fr; }
+            .play-btn { width: 60px; height: 60px; font-size: 1.5rem; }
         }
     </style>
 </head>
@@ -278,6 +441,13 @@
     <div class="desert-decoration ferris">🎡</div>
     
     <header class="gradient-bg">
+        <ul class="circles">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
         <h1>COACHELLA 2025</h1>
         <h2>Your Desert Oasis Survival Guide</h2>
     </header>
@@ -287,90 +457,95 @@
     </div>
     
     <div class="container">
-        <div class="music-player">
-            <h3>GET IN THE FESTIVAL MOOD</h3>
-            <div class="song-info">
-                <img src="/api/placeholder/80/80" alt="Album Cover">
-                <div>
-                    <h4>Danny Shields - OH MY</h4>
-                    <p>Festival Anthem 2025</p>
-                </div>
-            </div>
-            <div class="audio-controls">
-                <button id="playBtn" class="play-btn">▶</button>
-            </div>
-            <div class="progress-container" id="progress-container">
-                <div class="progress" id="progress"></div>
-            </div>
-            <div class="time">
-                <span id="current-time">0:00</span>
-                <span id="duration">0:00</span>
-            </div>
-            <audio id="audio" src=""></audio>
+        <!-- Music player with just play/pause -->
+        <div class="music-player floating">
+            <button id="playBtn" class="play-btn"><i class="fas fa-play"></i></button>
+            <audio id="audioPlayer" src="DannyShields-OHMY.mp3"></audio>
         </div>
         
         <div class="card-grid">
             <div class="card">
+                <div class="card-header
+                    Here's the rest of the HTML code, continuing from where it stopped, with the appropriate attribution to Zimeng Xue:
+
+```html
                 <div class="card-header tickets-bg">
-                    🎟️ SECURE YOUR SPOT
+                    Tickets & Passes
                 </div>
                 <div class="card-content">
-                    <p>Don't miss out on the hottest festival of 2025! Whether you're a Coachella veteran or first-timer, grab your tickets before they're gone. Get ready for two unforgettable weekends in the desert!</p>
-                    <a href="https://www.coachella.com/lineup" class="btn">Official Tickets</a>
+                    <p>Secure your spot in the desert! General admission, VIP packages, and camping options available. Payment plans make your festival dreams possible with easy installments.</p>
+                    <a href="#" class="btn">Buy Now</a>
                 </div>
             </div>
             
             <div class="card">
                 <div class="card-header lineup-bg">
-                    🎤 2025 DREAM LINEUP
+                    2025 Lineup
                 </div>
                 <div class="card-content">
-                    <p>From headliners that will blow your mind to underground artists about to explode, the 2025 lineup is our most ambitious yet. Discover who's performing and plan your perfect festival experience.</p>
-                    <a href="https://www.coachella.com/lineup" class="btn">See The Lineup</a>
+                    <p>Discover the incredible artists performing across multiple stages. From headliners to rising stars, Coachella 2025 brings together the most innovative sounds in music today.</p>
+                    <a href="#" class="btn">See Full Lineup</a>
                 </div>
             </div>
             
             <div class="card">
                 <div class="card-header marketplace-bg">
-                    💸 TICKET MARKETPLACE
+                    Festival Marketplace
                 </div>
                 <div class="card-content">
-                    <p>Missed the official sale? Looking to sell your ticket? Join our community marketplace where Coachella fans help each other out. Find tickets, camping passes, and connect with fellow festival-goers.</p>
-                    <a href="https://www.facebook.com/groups/1851397622007989" class="btn">Join The Exchange</a>
+                    <p>Shop exclusive Coachella merch, fashion, accessories, and art from our curated vendors. Find the perfect festival fits and mementos to remember your desert adventure.</p>
+                    <a href="#" class="btn">Explore Shop</a>
                 </div>
             </div>
             
             <div class="card">
                 <div class="card-header playlist-bg">
-                    🎧 PREP YOUR EARS
+                    Official Playlists
                 </div>
                 <div class="card-content">
-                    <p>Get into the Coachella mood with our curated playlist featuring all the artists performing this year. Perfect for road trips, workout sessions, or just getting hyped for the big weekend.</p>
-                    <a href="https://open.spotify.com/playlist/4BSj7IwrHLRpZeVNodMh5Z?si=5d27a87e88f94ed9" class="btn">Spotify Playlist</a>
+                    <p>Get into the Coachella spirit with our official playlists. Discover new music, prepare your festival schedule, and immerse yourself in the sounds of Coachella 2025.</p>
+                    <a href="#" class="btn">Listen Now</a>
                 </div>
             </div>
             
             <div class="card">
                 <div class="card-header livestream-bg">
-                    📱 COACHELLA ANYWHERE
+                    Livestream Events
                 </div>
                 <div class="card-content">
-                    <p>Can't make it to the desert? No problem! Experience the magic from anywhere with our high-quality livestreams. Don't miss a beat of the performances, art installations, and festival vibes.</p>
-                    <a href="https://www.youtube.com/coachella" class="btn">YouTube Channel</a>
+                    <p>Can't make it to the desert? Experience the magic from home with our HD livestreams of select performances, exclusive interviews, and behind-the-scenes content.</p>
+                    <a href="#" class="btn">Watch Live</a>
                 </div>
             </div>
         </div>
     </div>
     
     <footer>
-        <p>COACHELLA VALLEY MUSIC AND ARTS FESTIVAL 2025</p>
-        <p>Indio, California • April 2025</p>
-        <p class="credits">Website designed by Zimeng Xue</p>
+        <p>Coachella Valley Music and Arts Festival 2025</p>
+        <p>April 11-13 & April 18-20, 2025 | Indio, California</p>
+        <p>Website designed by <span class="creator">Zimeng Xue</span></p>
     </footer>
-
+    
     <script>
-        // Countdown timer to Coachella 2025 (assuming April 11, 2025 for Weekend 1)
-        const countdownDate = new Date("April 11, 2025 12:00:00").getTime();
+        // Audio Player Functionality
+        const playBtn = document.getElementById('playBtn');
+        const audioPlayer = document.getElementById('audioPlayer');
+        let isPlaying = false;
+        
+        playBtn.addEventListener('click', function() {
+            if (isPlaying) {
+                audioPlayer.pause();
+                playBtn.innerHTML = '<i class="fas fa-play"></i>';
+            } else {
+                audioPlayer.play();
+                playBtn.innerHTML = '<i class="fas fa-pause"></i>';
+            }
+            isPlaying = !isPlaying;
+        });
+        
+        // Countdown Timer
+        const countdownElement = document.getElementById('countdown');
+        const countdownDate = new Date("April 11, 2025 00:00:00").getTime();
         
         function updateCountdown() {
             const now = new Date().getTime();
@@ -381,49 +556,18 @@
             const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
             const seconds = Math.floor((distance % (1000 * 60)) / 1000);
             
-            document.getElementById("countdown").innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+            countdownElement.textContent = `${days}d ${hours}h ${minutes}m ${seconds}s`;
             
             if (distance < 0) {
-                document.getElementById("countdown").innerHTML = "IT'S HAPPENING NOW!";
+                clearInterval(x);
+                countdownElement.textContent = "Festival has begun!";
             }
         }
         
-        setInterval(updateCountdown, 1000);
+        // Update the countdown every second
         updateCountdown();
-        
-        // Audio Player Functionality
-        const audio = document.getElementById('audio');
-        const playBtn = document.getElementById('playBtn');
-        const progressContainer = document.getElementById('progress-container');
-        const progress = document.getElementById('progress');
-        const currentTimeEl = document.getElementById('current-time');
-        const durationEl = document.getElementById('duration');
-        
-        // Note: In a real implementation, this would be the actual audio file
-        // For this demo, we're using a placeholder
-        audio.src = "";
-        
-        // Play/pause functionality
-        function togglePlay() {
-            if (audio.paused) {
-                playBtn.textContent = '⏸️';
-                // In a real implementation, this would play the audio
-                // For this demo, we'll simulate playback
-                simulatePlayback();
-            } else {
-                playBtn.textContent = '▶';
-                // In a real implementation, this would pause the audio
-                // For this demo, we'll stop our simulation
-                clearInterval(playbackSimulation);
-            }
-            
-            // Toggle the audio state
-            // In a real implementation with actual audio file
-            // if (audio.paused) {
-            //     audio.play();
-            // } else {
-            //     audio.pause();
-            // }
-        }
-        
-        playBtn.addEventListener
+        const x = setInterval(updateCountdown, 1000);
+    </script>
+</body>
+</html>
+```
